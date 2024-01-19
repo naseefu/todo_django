@@ -1,0 +1,26 @@
+.full{
+    background-color: rgba(171, 199, 199, 0.47);
+    padding: 20px;
+    margin-top: 20px;
+    height: fit-content;
+    width: 650px;
+    margin-right: 20px;
+    box-shadow: 1px 1px 10px rgba(5, 3, 3, 0.68);
+    display: inline-block;
+    margin-left: 30px;
+    /*float: inside;*/
+}
+.todo{
+
+    margin-top: 20px;
+    /*width: 1000px;*/
+    /*padding-right: 800px;*/
+}
+.max{
+    display: flex;
+}
+#shadow{
+
+    width: 650px;
+    display: inline-block;
+}

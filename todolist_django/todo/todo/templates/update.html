@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" style="margin: 20px;">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">Task</label>
+      <br>
+    {{ f.name }}
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Priority</label>
+      <br>
+    {{ f.priority }}
+  </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Date</label>
+        <br>
+    {{ f.date }}
+  </div>
+  <button type="submit" class="btn btn-danger">Submit</button>
+</form>
+
+{% endblock %}

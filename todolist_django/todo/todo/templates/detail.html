@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="todo">
+    <h3 style="margin-left: 20px">Task To be Completed</h3>
+    <div class="col-md-6" id="a3">
+{#        {% for i in task1 %}#}
+        <div class="shadow card" id="shadow">
+            <div class="card-body">
+                <h5 class="card-title">{{ task1.name }}</h5>
+                <p><b>{{ task1.priority }}</b></p>
+                <p><b>{{ task1.date }}</b></p>
+                <a class="btn btn-warning" href="{% url 'delete' task1.id  %}">Done</a>
+                <a class="btn btn-danger" href="{% url 'update' task1.id  %}">Update</a>
+            </div>
+        </div>
+            <br>
+{#{% endfor %}#}
+    </div>
+</div>
+{% endblock %}

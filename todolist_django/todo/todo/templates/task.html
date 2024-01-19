@@ -1,0 +1,43 @@
+{#{% load static %}#}
+{% extends 'base.html' %}
+{% block content %}
+{#    <link rel="stylesheet" href="{% static 'base.css' %}">#}
+    <div class="max">
+    <div class="full">
+<form method="POST" style="margin: 20px;">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">Task</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the Task" name="task">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Priority</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the Priority" name="priority">
+  </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Date</label>
+    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Enter the date" name="date">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    </div>
+    <br>
+    <div class="todo">
+    <h3 style="margin-left: 20px">Task To be Completed</h3>
+    <div class="col-md-6" id="a3">
+        {% for i in task1 %}
+        <div class="shadow card" id="shadow">
+            <div class="card-body">
+                <h5 class="card-title">{{ i.name }}</h5>
+                <p><b>{{ i.priority }}</b></p>
+                <p><b>{{ i.date }}</b></p>
+                <a class="btn btn-warning" href="{% url 'delete' i.id  %}">Done</a>
+                <a class="btn btn-danger" href="{% url 'update' i.id  %}">Update</a>
+            </div>
+        </div>
+            <br>
+{% endfor %}
+    </div>
+</div>
+    </div>
+{% endblock %}
